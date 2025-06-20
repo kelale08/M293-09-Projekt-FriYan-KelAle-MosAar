@@ -85,16 +85,19 @@ body {
 
 .list-header {
   display: flex;
-  justify-content: between;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
 .list-header h1 {
   color: #333;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 0;
 }
 
 /* Trip Stats */
@@ -288,6 +291,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
 }
 
 .btn:disabled {
@@ -594,21 +598,40 @@ body {
 
 /* Empty State */
 .empty-state {
-  text-align: center;
-  padding: 3rem;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 500px;
+  animation: fadeIn 0.7s;
 }
 
 .empty-state h3 {
-  color: #333;
+  color: #667eea;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .empty-state p {
   color: #666;
-  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Verbesserte Darstellung für leere Listen und Fehler */
+.empty-list-message, .error-message {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 500px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 /* Footer */
@@ -698,6 +721,20 @@ body {
   }
 }
 
+@media (max-width: 700px) {
+  .main-content {
+    padding: 1rem;
+  }
+  .trips-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .business-trip-form, .meeting-form {
+    padding: 1rem;
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 480px) {
   .business-trip-form,
   .meeting-form {
@@ -712,4 +749,19 @@ body {
   .meetings-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Allgemeine Abstände für mehr Luft */
+.business-trip-list, .meeting-manager {
+  margin-bottom: 2rem;
+}
+
+/* Buttons noch moderner */
+.btn {
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
+}
+
+/* Kartenabstand */
+.trip-card, .stat-card {
+  margin-bottom: 1.5rem;
 }

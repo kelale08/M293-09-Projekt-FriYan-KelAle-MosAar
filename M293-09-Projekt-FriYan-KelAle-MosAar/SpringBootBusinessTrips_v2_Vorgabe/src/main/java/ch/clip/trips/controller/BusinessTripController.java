@@ -40,6 +40,7 @@ public class BusinessTripController {
 	} 
 
 	@PostMapping("/trips")
+	@CrossOrigin(origins = "*") // CORS für POST erlauben
 	// @RequestMapping(value = "/trips", method = RequestMethod.POST, produces =
 	// "application/json", consumes = "appication/json")
 	BusinessTrip newProduct(@RequestBody BusinessTrip newTrip) {

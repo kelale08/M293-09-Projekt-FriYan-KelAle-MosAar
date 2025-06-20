@@ -57,9 +57,6 @@ function BusinessTripList({ onEdit, onManageMeetings, onCreateNew }) {
         <div className="empty-state">
           <h3>No business trips found</h3>
           <p>Create your first business trip to get started!</p>
-          <button className="btn btn-primary" onClick={onCreateNew}>
-            Create First Trip
-          </button>
         </div>
       ) : (
         <div className="trips-grid">
